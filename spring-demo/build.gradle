@@ -1,0 +1,30 @@
+plugins {
+    id 'java'
+//    id 'net.ltgt.apt' version '0.10'
+}
+
+
+sourceCompatibility = 1.8
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile(project(":spring-beans"))
+    compile(project(":spring-context"))
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+//    compileOnly 'org.projectlombok:lombok:1.18.2'
+//    apt "org.projectlombok:lombok:1.18.2"
+//    compile 'org.projectlombok:lombok:1.18.8'
+//    compileOnly 'org.projectlombok:lombok:1.18.8'
+//    annotationProcessor 'org.projectlombok:lombok:1.18.8'
+//    testCompileOnly  'org.projectlombok:lombok:1.18.8'
+//    testAnnotationProcessor  'org.projectlombok:lombok:1.18.8'
+}
